@@ -44,7 +44,7 @@ const Page2 = props => {
                   <Box key={i}>
                     <Container h="calc(75vh * 0.8 * 0.3)" fluid>
                       <Flex h="30%" pl="2.5%" align="center">
-                        <Text size={props.isMobile ? "1rem" : "1.7rem"}>{props.foodMenuItems[0].header}</Text>
+                        <Text size={props.isMobile ? "1rem" : "1.7rem"}>{props.foodMenuItems[i].header}</Text>
                       </Flex>
                       <ScrollArea w="75vw" h="70%" scrollbarSize={6} scrollHideDelay={500}>
                         <Group h="calc(75vh * 0.8 * 0.3 * 0.7)" noWrap spacing={0}>

@@ -80,7 +80,7 @@ const foodMenuItems = [
     color: "orange.4"
   },
   {
-    header: "Starches",
+    header: "Fat",
     content: [
       { label: "Butter", Icon: GiButterToast },
       { label: "Oil", Icon: GiBeerBottle },
@@ -111,7 +111,7 @@ const foodMenuItems = [
     color: "green.5"
   },
   {
-    header: "Fruits and Vegetables",
+    header: "Dairy Products",
     content: [
       { label: "Dairy Products", Icon: GiMilkCarton },
       { label: "Cheese", Icon: BiCheese },
