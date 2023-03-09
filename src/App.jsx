@@ -21,23 +21,20 @@ const emptyDateData = () => {
   return {
     breakfast: {
       didntEat: false,
+      mealTime: "07:00",
       selectedFood: []
     },
     lunch: {
       didntEat: false,
+      mealTime: "12:00",
       selectedFood: []
     },
     dinner: {
       didntEat: false,
+      mealTime: "18:00",
       selectedFood: []
     }
   };
-};
-
-const mealTimes = {
-  breakfast: "7:00 AM",
-  lunch: "12:00 PM",
-  dinner: "6:00 PM"
 };
 
 const foodMenuItems = [
@@ -195,7 +192,6 @@ function App() {
     />,
     <Page2
       isMobile={isMobile}
-      mealTime={mealTimes[selectedMeal]}
       selectedDateObject={selectedDateObject}
       setSelectedDateObject={setSelectedDateObject}
       selectedMeal={selectedMeal}
@@ -280,7 +276,7 @@ function App() {
             }
             <Center h="100%">
               <DatePickerInput
-                size="xl"
+                size={isMobile ? "md" : "xl"}
                 defaultValue={today}
                 value={selectedDateObject.date}
                 onChange={value => {

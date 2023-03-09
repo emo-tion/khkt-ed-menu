@@ -1,4 +1,5 @@
 import { Center, Container, Divider, Paper, Flex, Group, Text, Stack, Switch, ScrollArea, ActionIcon, Box } from "@mantine/core";
+import { TimeInput } from "@mantine/dates";
 import { motion } from "framer-motion";
 
 const Page2 = props => {
@@ -34,7 +35,28 @@ const Page2 = props => {
               </Flex>
               <Flex h="50%" px="20%" align="center" justify="space-between">
                 <Text fz={props.isMobile ? "1.25rem" : "2rem"}>Meal time</Text>
-                <Text fz={props.isMobile ? "1.25rem" : "2rem"}>{props.mealTime}</Text>
+                <TimeInput
+                  size={props.isMobile ? "md" : "xl"}
+                  variant="unstyled"
+                  value={props.selectedDateObject.data[props.selectedMeal].mealTime}
+                  onChange={event => {
+                    props.setSelectedDateObject({
+                      ...props.selectedDateObject,
+                      data: {
+                        ...props.selectedDateObject.data,
+                        [props.selectedMeal]: {
+                          ...props.selectedDateObject.data[props.selectedMeal],
+                          mealTime: event.target.value
+                        }
+                      }
+                    });
+                  }}
+                  styles={{
+                    input: {
+                      fontSize: props.isMobile ? "1.25rem" : "2rem"
+                    }
+                  }}
+                />
               </Flex>
             </Container>
             <Divider size="sm" />
